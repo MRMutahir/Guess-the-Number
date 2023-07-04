@@ -39,6 +39,10 @@ console.log(Score.textContent)
 checkButton.addEventListener('click', () => {
     let mathRandomNumber = Math.round(Math.random() * 10);
     console.log(mathRandomNumber);
+    if(number.value === ''){
+        alert('bhai kxh tw lhik');
+        return false
+    }
     if (Score.textContent > 0) {
 
         if (mathRandomNumber==number.value) {
@@ -46,6 +50,7 @@ checkButton.addEventListener('click', () => {
             Score.textContent = +Score.textContent + 1;
             if (highscore.textContent < Score.textContent) {
                 highscore.textContent = Score.textContent;
+                number.value =''
 
             }else{
                 console.log('You lose')
@@ -59,9 +64,14 @@ checkButton.addEventListener('click', () => {
 })
 
 tryagainbtn.addEventListener('click',() => { 
-    Score.textContent == 0
 
-    number.classList.remove(number.value)
+    console.log('hi');
+
+    Score.textContent = 20;
+    highscore.textContent = 0;
+    number.value = ''
+
+    // number.classList.remove(number.value);
 
 
 
